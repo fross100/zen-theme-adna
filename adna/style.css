@@ -1,9 +1,9 @@
 :root {
   /* === Core accent source ===
-     Omarchy sets --zen-colors-primary via thpm-zen-userChrome.css;
-     Zen theme editor sets --zen-primary-color.
-     This variable chains them so the theme responds to both. */
-  --adna-accent: var(--zen-colors-primary, var(--zen-primary-color));
+     Priority: Omarchy accent (--base08) > Omarchy background > Zen editor.
+     The Omarchy hook sets --zen-colors-primary to --base00 (background),
+     so we pull --base08 first to get the actual accent colour. */
+  --adna-accent: var(--base08, var(--zen-colors-primary, var(--zen-primary-color)));
 
   /* === Surface tints === */
   --adna-bg: light-dark(
