@@ -36,6 +36,7 @@
   gap: 1px !important;
   width: fit-content !important;
   order: 3 !important;
+  margin-left: -22px !important;
   transform: scale(0.8) !important;
   transform-origin: center right !important;
 }
