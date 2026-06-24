@@ -8,21 +8,44 @@
   font-style: normal;
 }
 
+/* Strip solid backgrounds from the window chain so backdrop-filter
+   on the sidebar can blur the desktop below. */
+#main-window,
+#zen-main-app-wrapper,
+#browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+#zen-appcontent-wrapper {
+  background: transparent !important;
+}
+
 #navigator-toolbox {
   padding: 4px 5px 4px 8px !important;
   background: var(--adna-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -moz-default-appearance: none !important;
+  appearance: none !important;
 }
 
-#navigator-toolbox,
-#titlebar,
+#nav-bar,
+#PersonalToolbar {
+  background: var(--adna-bg) !important;
+}
+
+/* Inner sidebar elements: transparent so the glass on
+   #navigator-toolbox shows through without stacking. */
 #TabsToolbar,
 #toolbar-menubar,
-#nav-bar,
-#PersonalToolbar,
+#titlebar,
 #zen-sidebar-top-buttons,
 #zen-sidebar-foot-buttons,
-#zen-toolbar-background {
-  background: var(--adna-bg) !important;
+#zen-toolbar-background,
+#vertical-tabs,
+#vertical-tabs .customization-target,
+.tools-and-extensions[aria-orientation="vertical"],
+.tools-and-extensions.actions-list {
+  background: transparent !important;
 }
 
 #zen-sidebar-splitter,

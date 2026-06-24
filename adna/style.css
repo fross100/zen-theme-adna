@@ -11,19 +11,10 @@
      high-contrast hue for tab highlights and gradients. */
   --adna-accent: var(--base05, var(--adna-base));
 
-  /* === Surface tints (derived from --adna-base) === */
-  --adna-bg: light-dark(
-    color-mix(in srgb, var(--adna-base) 35%, white),
-    color-mix(in srgb, var(--adna-base) 35%, black)
-  );
-  --adna-bg-hover: light-dark(
-    color-mix(in srgb, var(--adna-base) 45%, white),
-    color-mix(in srgb, var(--adna-base) 45%, black)
-  );
-  --adna-bg-splitter: light-dark(
-    color-mix(in srgb, var(--adna-base) 1%, transparent),
-    color-mix(in srgb, var(--adna-base) 1%, transparent)
-  );
+  /* === Surface tints (semi-transparent, shows browser chrome behind) === */
+  --adna-bg: color-mix(in srgb, var(--adna-base) 60%, transparent);
+  --adna-bg-hover: color-mix(in srgb, var(--adna-base) 70%, transparent);
+  --adna-bg-splitter: color-mix(in srgb, var(--adna-base) 1%, transparent);
 
   /* === Tab surfaces (derived from --adna-accent) ===
      --tab-color is set per-tab via Container Tab or Workspace
@@ -66,6 +57,12 @@
     light-dark(color-mix(in srgb, var(--adna-accent) 50%, white), color-mix(in srgb, var(--adna-accent) 50%, black)),
     light-dark(color-mix(in srgb, var(--adna-accent) 15%, white), color-mix(in srgb, var(--adna-accent) 15%, black))
   );
+
+  /* === Zen browser chrome ===
+     Make the main browser area transparent so backdrop-filter
+     on the sidebar can blur the desktop wallpaper behind it.
+     Requires browser.tabs.allow_transparent_browser = true. */
+  --zen-main-browser-background: transparent !important;
 
   /* === Legacy helper vars (keep for compatibility) === */
   --livs-bg: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
