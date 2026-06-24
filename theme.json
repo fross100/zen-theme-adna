@@ -3,7 +3,7 @@
   "name": "Adna",
   "description": "A custom Zen Browser theme",
   "homepage": "https://github.com/fross100/zen-adna",
-  "readme": "https://raw.githubusercontent.com/fross100/zen-adna/main/README.md",
+  "readme": "https://raw.githubusercontent.com/fross100/zen-adna/master/README.md",
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"
