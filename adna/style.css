@@ -39,7 +39,10 @@
 
   /* === Emboss shadow colours ===
      Dark side = black shadow, Light side = white / tinted highlight. */
-  --adna-shadow-dark: light-dark(black, black);
+  --adna-shadow-dark: light-dark(
+    color-mix(in srgb, var(--base00, black) 20%, transparent),
+    color-mix(in srgb, var(--base00, black) 60%, transparent)
+  );
   --adna-shadow-light: light-dark(
     rgba(255, 255, 255, 0.4),
     color-mix(in srgb, var(--base05, var(--adna-accent)) 12%, transparent)
